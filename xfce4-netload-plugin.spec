@@ -1,5 +1,5 @@
-Summary:	A netload plugin for the XFce panel
-Summary(pl):	Wtyczka obci±¿anie sieci dla panelu XFce
+Summary:	A netload plugin for the Xfce panel
+Summary(pl):	Wtyczka obci±¿anie sieci dla panelu Xfce
 Name:		xfce4-netload-plugin
 Version:	0.2.3
 Release:	2
