@@ -25,6 +25,7 @@ sieciowych na panelu.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--disable-static
 
