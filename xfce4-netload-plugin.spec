@@ -2,7 +2,7 @@ Summary:	A netload plugin for the Xfce panel
 Summary(pl):	Wtyczka obci±¿anie sieci dla panelu Xfce
 Name:		xfce4-netload-plugin
 Version:	0.3.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
