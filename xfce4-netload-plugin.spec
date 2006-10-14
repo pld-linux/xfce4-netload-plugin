@@ -5,9 +5,9 @@ Version:	0.3.2
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
+Source0:	http://goodies.xfce.org/releases/xfce4-netload-plugin/%{name}-%{version}.tar.bz2
 # Source0-md5:	755dcc170fb33274378c7b110cf21f56
-URL:		http://xfce-goodies.berlios.de/
+URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
