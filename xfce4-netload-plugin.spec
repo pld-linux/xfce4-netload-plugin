@@ -1,5 +1,5 @@
 Summary:	A netload plugin for the Xfce panel
-Summary(pl):	Wtyczka obci±¿anie sieci dla panelu Xfce
+Summary(pl.UTF-8):   Wtyczka obciÄ…Å¼anie sieci dla panelu Xfce
 Name:		xfce4-netload-plugin
 Version:	0.4.0
 Release:	1
@@ -23,8 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This plugin displays the current load of the network interfaces of
 your choice in the panel.
 
-%description -l pl
-Wtyczka ta wy¶wietla aktualne obci±¿enie wybranych interfejsów
+%description -l pl.UTF-8
+Wtyczka ta wyÅ›wietla aktualne obciÄ…Å¼enie wybranych interfejsÃ³w
 sieciowych na panelu.
 
 %prep
