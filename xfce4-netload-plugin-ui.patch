@@ -1,0 +1,55 @@
+diff -ur xfce4-netload-plugin-1.0.0-orig/configure.ac xfce4-netload-plugin-1.0.0/configure.ac
+--- xfce4-netload-plugin-1.0.0-orig/configure.ac	2010-12-08 03:57:06.000000000 +0100
++++ xfce4-netload-plugin-1.0.0/configure.ac	2011-03-01 13:07:49.943260737 +0100
+@@ -60,8 +60,8 @@
+ dnl configure the panel plugin
+ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.20])
+ 
+-dnl configure the libxfcegui4
+-XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.4.0])
++dnl configure the libxfce4ui
++XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-1], [4.8.0])
+ 
+ dnl Check for i18n support
+ XDT_I18N([ast ca cs da de el en_GB eo es eu fi fr gl hu id it ja kk ko lt lv nb pa pl pt_BR pt ru sq sv tr ug uk ur_PK ur vi zh_CN ])
+diff -ur xfce4-netload-plugin-1.0.0-orig/panel-plugin/Makefile.am xfce4-netload-plugin-1.0.0/panel-plugin/Makefile.am
+--- xfce4-netload-plugin-1.0.0-orig/panel-plugin/Makefile.am	2010-12-08 03:46:41.000000000 +0100
++++ xfce4-netload-plugin-1.0.0/panel-plugin/Makefile.am	2011-03-01 13:07:49.943260737 +0100
+@@ -17,12 +17,12 @@
+ xfce4_netload_plugin_CFLAGS =						\
+ 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+ 	@LIBXFCE4PANEL_CFLAGS@				\
+-	@LIBXFCEGUI4_CFLAGS@
++	@LIBXFCE4UI_CFLAGS@
+ 
+ xfce4_netload_plugin_LDADD =						\
+ 	@SOLLIBS@                                   			\
+ 	@LIBXFCE4PANEL_LIBS@                                   			\
+-	@LIBXFCEGUI4_LIBS@
++	@LIBXFCE4UI_LIBS@
+ 
+ # .desktop file
+ #
+diff -ur xfce4-netload-plugin-1.0.0-orig/panel-plugin/netload.c xfce4-netload-plugin-1.0.0/panel-plugin/netload.c
+--- xfce4-netload-plugin-1.0.0-orig/panel-plugin/netload.c	2010-12-08 03:46:41.000000000 +0100
++++ xfce4-netload-plugin-1.0.0/panel-plugin/netload.c	2011-03-01 13:08:27.399979731 +0100
+@@ -30,8 +30,8 @@
+ #include <gtk/gtk.h>
+ 
+ #include <libxfce4util/libxfce4util.h>
+-#include <libxfcegui4/libxfcegui4.h>
+-#include <libxfce4panel/xfce-panel-plugin.h>
++#include <libxfce4ui/libxfce4ui.h>
++#include <libxfce4panel/libxfce4panel.h>
+ 
+ 
+ #define BORDER 8
+@@ -460,7 +460,7 @@
+     if (!init_netload( &(global->monitor->data), global->monitor->options.network_device)
+             && !supress_warnings)
+     {
+-        xfce_err (_("%s: Error in initalizing:\n%s"),
++        xfce_dialog_show_error (NULL, NULL, _("%s: Error in initalizing:\n%s"),
+             _(APP_NAME),
+             _(errormessages[
+                 lobal->monitor->data.errorcode == 0 
