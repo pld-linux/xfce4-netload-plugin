@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-#%attr(755,root,root) %{_libdir}/xfce4/panel/plugins/xfce4-netload-plugin
-#%{_datadir}/xfce4/panel/plugins/netload.desktop
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-netload-plugin
+%{_datadir}/xfce4/panel-plugins/netload.desktop
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/scalable/*/*.svg
