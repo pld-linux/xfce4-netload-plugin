@@ -1,16 +1,18 @@
 Summary:	A netload plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka obciążanie sieci dla panelu Xfce
 Name:		xfce4-netload-plugin
-Version:	1.4.0
-Release:	3
+Version:	1.4.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-netload-plugin/1.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	41f993861a8b6fc0c611c89c8c3927c1
+# Source0-md5:	3e07d6e208319467976ed15b3046b567
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-tools
+BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gtk+3-devel >= 3.22.0
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -49,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{hye,ie,ur_PK}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hye,ie,ur_PK}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libnetload.la
 
 %find_lang %{name}
